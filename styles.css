@@ -1,6 +1,12 @@
 #container{
     display: flex;
-    gap: 13px;
+    gap: 1px;
     justify-content: center;
     align-items: center;
+}
+div .gridsquare{
+   border-style: solid;
+    padding: 18px;
+
+
 }
