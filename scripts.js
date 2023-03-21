@@ -14,13 +14,16 @@ function genDivs(n) {
         e.appendChild(row);
     }
 }
+function clearContainer(container){
+    container.innerHTML = ''
+
+}
 function changeDivColor(x){
      return x.style.backgroundColor = "blue"
 }
-genDivs(16)
 
-const divs = document.querySelectorAll('.gridsquare')
-console.log(divs)
+//const divs = document.querySelectorAll('.gridsquare')
+//console.log(divs)
 
 /*divs.forEach(x => x.addEventListener('mouseenter', function (){
     divs.forEach(e =>{
@@ -31,7 +34,29 @@ console.log(divs)
     })
 }))
 */
-divs.forEach(x => x.addEventListener('mouseenter', () => x.style.backgroundColor ='blue'))
+//divs.forEach(x => x.addEventListener('mouseenter', () => x.style.backgroundColor ='black'))
+const button = document.getElementById("button")
+let input;
+console.log(button)
+
+genDivs(16)
+const divs = document.querySelectorAll('.gridsquare')
+divs.forEach(x => x.addEventListener('mouseenter', () => x.style.backgroundColor ='black'))
+
+button.addEventListener('click',() =>{
+    input = prompt('Enter to a number to create grid ')
+    if (input > 100){
+        alert("Grid size too large, try again")
+        input = prompt('Enter a number to create grid')
+    }
+    let clear = document.getElementById('container')
+    clearContainer(container)
+    genDivs(input)
+    const divs = document.querySelectorAll('.gridsquare')
+    divs.forEach(x => x.addEventListener('mouseenter', () => x.style.backgroundColor ='black'))
+
+})
+
 
 
 
